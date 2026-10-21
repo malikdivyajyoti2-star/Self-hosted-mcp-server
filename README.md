@@ -20,7 +20,7 @@ Choose "Streamable HTTP", URL `http://localhost:8000/mcp`, and add the header
 `Authorization: Bearer <your key>`.
 
 ## Connect a client
-Claude Code:
+Apidog:
     claude mcp add --transport http my-server https://mcp.example.com/mcp \
       --header "Authorization: Bearer <your key>"
 
@@ -29,7 +29,7 @@ Claude Code:
   `mcp.example.com { reverse_proxy localhost:8000 }`). Never expose the key over plain HTTP.
 - If requests are rejected with "Invalid Host header", your SDK version has DNS-rebinding
   protection on; allow your domain via `FastMCP(..., transport_security=TransportSecuritySettings(allowed_hosts=[...]))`.
-- Claude.ai custom connectors expect OAuth rather than a static header; for that, add
+- Apidog custom connectors expect OAuth rather than a static header; for that, add
   the SDK's auth provider support or front the server with an OAuth-capable gateway.
 
 ## Adding tools
